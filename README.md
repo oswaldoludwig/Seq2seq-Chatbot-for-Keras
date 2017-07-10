@@ -9,7 +9,7 @@ The training of this new model converges in a few epochs. Using our dataset of 8
 
 To chat with the pre-trained model:
 
-1- Download the python file "conversation.py", the vocabulary file "vocabulary_movie", and the net weights "my_model_weights20", which can be found here: https://www.dropbox.com/sh/o0rze9dulwmon8b/AAA6g6QoKM8hBEHGst6W4JGDa?dl=0;
+1- Download the python file "conversation.py", the vocabulary file "vocabulary_movie", and the net weights "my_model_weights20", which can be found here: https://www.dropbox.com/sh/o0rze9dulwmon8b/AAA6g6QoKM8hBEHGst6W4JGDa?dl=0 ;
 2- Run conversation.py.
  
 To train a new model or to fine tune on your own data:
