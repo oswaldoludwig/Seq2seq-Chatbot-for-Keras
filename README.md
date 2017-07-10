@@ -9,19 +9,15 @@ The training of this new model converges in a few epochs. Using our dataset of 8
 
 **To chat with the pre-trained model:**
 
-1- Download the python file "conversation.py", the vocabulary file "vocabulary_movie", and the net weights "my_model_weights20", which can be found here: https://www.dropbox.com/sh/o0rze9dulwmon8b/AAA6g6QoKM8hBEHGst6W4JGDa?dl=0 ;
-
-2- Run conversation.py.
+1. Download the python file "conversation.py", the vocabulary file "vocabulary_movie", and the net weights "my_model_weights20", which can be found here: https://www.dropbox.com/sh/o0rze9dulwmon8b/AAA6g6QoKM8hBEHGst6W4JGDa?dl=0 ;
+2. Run conversation.py.
  
 **To train a new model or to fine tune on your own data:**
 
-1- If you want to train from the scratch, delete the file my_model_weights20.h5. To fine tune on your data, keep this file;
-
-2- Download the Glove folder 'glove.6B' and include this folder in the directory of the chatbot (you can find this folder here https://nlp.stanford.edu/projects/glove/). This algorithm applies transfer learning by using a pre-trained word embedding, which is fine tuned during the training;
-
-3- Run split_qa.py to split the content of your training data into two files: 'context' and 'answers' and get_train_data.py to store the padded sentences into the files 'Padded_context' and 'Padded_answers';
-
-4- Run train_bot.py to train the chatbot (it is recommended the use of GPU, to do so type: THEANO_FLAGS=mode=FAST_RUN,device=gpu,floatX=float32,exception_verbosity=high python train_bot.py);
+1. If you want to train from the scratch, delete the file my_model_weights20.h5. To fine tune on your data, keep this file;
+2. Download the Glove folder 'glove.6B' and include this folder in the directory of the chatbot (you can find this folder here https://nlp.stanford.edu/projects/glove/). This algorithm applies transfer learning by using a pre-trained word embedding, which is fine tuned during the training;
+3. Run split_qa.py to split the content of your training data into two files: 'context' and 'answers' and get_train_data.py to store the padded sentences into the files 'Padded_context' and 'Padded_answers';
+4. Run train_bot.py to train the chatbot (it is recommended the use of GPU, to do so type: THEANO_FLAGS=mode=FAST_RUN,device=gpu,floatX=float32,exception_verbosity=high python train_bot.py);
 
 Name your training data as "data.txt". This file must contain one dialogue utterance per line, like this:
 
