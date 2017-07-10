@@ -8,7 +8,6 @@ from keras.optimizers import Adam, SGD
 from keras.models import Model
 from keras.models import Sequential
 from keras.layers import Activation, Dense
-from keras.layers.wrappers import TimeDistributed
 from keras.callbacks import EarlyStopping
 from keras.preprocessing import sequence
 
@@ -27,8 +26,6 @@ sentence_embedding_size = 300
 dictionary_size = 7000
 maxlen_input = 50
 maxlen_output = 50
-number_of_LSTM_layers = 2
-decoder_size = 3500
 num_subsets = 1
 Epochs = 100
 BatchSize = 128  #  Check the capacity of your GPU
