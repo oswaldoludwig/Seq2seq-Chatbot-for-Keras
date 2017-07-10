@@ -22,7 +22,10 @@ The training of this new model converges in a few epochs. Using our dataset of 8
 Name your training data as "data.txt". This file must contain one dialogue utterance per line, like this:
 
 It's great to see you!
+
 It's nice to see you, too!
 .
+
 .
+
 .
