@@ -81,7 +81,7 @@ def preprocess(raw_word, name):
     for term in l4:
         raw_word = raw_word.replace(', ' + term, ', ' + name)
         raw_word = raw_word.replace(' ' + term + ' ,' ,' ' + name + ' ,')
-        raw_word = raw_word.replace('i am ' + term, 'i am john')
+        raw_word = raw_word.replace('i am ' + term, 'i am ' + name_of_computer)
         raw_word = raw_word.replace('my name is' + term, 'my name is ' + name_of_computer)
     
     for j in range(30):
