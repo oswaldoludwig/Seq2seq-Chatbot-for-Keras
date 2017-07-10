@@ -8,7 +8,6 @@ from keras.optimizers import Adam
 from keras.models import Model
 from keras.models import Sequential
 from keras.layers import Activation, Dense
-from keras.layers.wrappers import TimeDistributed
 from keras.preprocessing import sequence
 
 import keras.backend as K
@@ -17,7 +16,6 @@ np.random.seed(1234)  # for reproducibility
 import cPickle
 import theano
 import os.path
-import pandas as pd
 import sys
 import nltk
 import re
@@ -29,8 +27,6 @@ word_embedding_size = 100
 sentence_embedding_size = 300
 dictionary_size = 7000
 maxlen_input = 50
-number_of_decoding_layers = 1
-decoder_size = 3500
 
 vocabulary_file = 'vocabulary_movie'
 weights_file = 'my_model_weights20.h5'
