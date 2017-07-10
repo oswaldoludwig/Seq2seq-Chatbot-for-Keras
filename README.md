@@ -24,6 +24,7 @@ Name your training data as "data.txt". This file must contain one dialogue utter
 It's great to see you!
 
 It's nice to see you, too!
+
 .
 
 .
