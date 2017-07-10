@@ -7,13 +7,13 @@ The vanilla seq2seq model became popular in neural machine translation, a task t
 
 The training of this new model converges in a few epochs. Using our dataset of 8K training examples, it was required only 100 epochs to reach categorical cross-entropy loss of 0.0318, at the cost of 139 s/epoch running in a GPU GTX980. The performance of this trained model (provided in this repository) seems as convincing as the performance of a vanilla seq2seq model trained on the ~300K training examples of the Cornell Movie Dialogs Corpus, but requires much less computational effort to train.
 
-To chat with the pre-trained model:
+**To chat with the pre-trained model:**
 
 1- Download the python file "conversation.py", the vocabulary file "vocabulary_movie", and the net weights "my_model_weights20", which can be found here: https://www.dropbox.com/sh/o0rze9dulwmon8b/AAA6g6QoKM8hBEHGst6W4JGDa?dl=0 ;
 
 2- Run conversation.py.
  
-To train a new model or to fine tune on your own data:
+**To train a new model or to fine tune on your own data:**
 
 1- If you want to train from the scratch, delete the file my_model_weights20.h5. To fine tune on your data, keep this file;
 
