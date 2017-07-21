@@ -5,7 +5,7 @@ __version__ = '1.01'
 
 import numpy as np
 
-text = open('movie_data.txt', 'r')
+text = open('dialog_simple', 'r')
 q = open('context', 'w')
 a = open('answers', 'w')
 pre_pre_previous_raw=''
