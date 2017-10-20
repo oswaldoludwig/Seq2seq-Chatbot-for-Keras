@@ -26,3 +26,5 @@ The training of this new model converges in few epochs. Using our dataset of 8K 
 4. Run train_bot.py to train the chatbot (it is recommended the use of GPU, to do so type: THEANO_FLAGS=mode=FAST_RUN,device=gpu,floatX=float32,exception_verbosity=high python train_bot.py);
 
 Name your training data as "data.txt". This file must contain one dialogue utterance per line. If your dataset is big, set the variable num_subsets (in line 29 of train_bot.py) to a larger number.
+
+A nice overview of the current implementations of neural conversational models for different frameworks (along with some results) can be found here: https://github.com/nicolas-ivanov/seq2seq_chatbot_links
