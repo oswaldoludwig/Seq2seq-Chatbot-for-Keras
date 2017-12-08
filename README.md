@@ -1,5 +1,5 @@
 # Seq2seq Chatbot for Keras
-This repository contains a new generative model of chatbot based on seq2seq modeling. Further details on this model can be found in Section 3 of the paper: ##### [End-to-end_Adversarial_Learning_for_Generative_Conversational_Agents](https://www.researchgate.net/publication/321347271_End-to-end_Adversarial_Learning_for_Generative_Conversational_Agents). In the case of publication using ideas or pieces of code from this repository, please kindly cite this paper.
+This repository contains a new generative model of chatbot based on seq2seq modeling. Further details on this model can be found in Section 3 of the paper: [End-to-end_Adversarial_Learning_for_Generative_Conversational_Agents](https://www.researchgate.net/publication/321347271_End-to-end_Adversarial_Learning_for_Generative_Conversational_Agents). In the case of publication using ideas or pieces of code from this repository, please kindly cite this paper.
 
 The trained model available here used a small dataset composed of ~8K pairs of context (the last two utterances of the dialogue up to the current point) and respective response. The data were collected from dialogues of English courses online. This trained model can be fine-tuned using a closed domain dataset to real-world applications.
 
