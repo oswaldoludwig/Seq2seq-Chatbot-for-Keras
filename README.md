@@ -17,18 +17,18 @@ The training of this new model converges in few epochs. Using our dataset of 8K 
 
 **To chat with the pre-trained model:**
 
-1. Download the python file "conversation.py", the vocabulary file "vocabulary_movie", and the net weights "my_model_weights20", which can be found here: https://www.dropbox.com/sh/o0rze9dulwmon8b/AAA6g6QoKM8hBEHGst6W4JGDa?dl=0 ;
+1. Download the python file "conversation.py", the vocabulary file "vocabulary_movie", and the net weights "my_model_weights20", which can be found [here](https://www.dropbox.com/sh/o0rze9dulwmon8b/AAA6g6QoKM8hBEHGst6W4JGDa?dl=0) ;
 2. Run conversation.py.
  
 **To train a new model or to fine tune on your own data:**
 
 1. If you want to train from the scratch, delete the file my_model_weights20.h5. To fine tune on your data, keep this file;
-2. Download the Glove folder 'glove.6B' and include this folder in the directory of the chatbot (you can find this folder here https://nlp.stanford.edu/projects/glove/). This algorithm applies transfer learning by using a pre-trained word embedding, which is fine tuned during the training;
+2. Download the Glove folder 'glove.6B' and include this folder in the directory of the chatbot (you can find this folder [here](https://nlp.stanford.edu/projects/glove/)). This algorithm applies transfer learning by using a pre-trained word embedding, which is fine tuned during the training;
 3. Run split_qa.py to split the content of your training data into two files: 'context' and 'answers' and get_train_data.py to store the padded sentences into the files 'Padded_context' and 'Padded_answers';
 4. Run train_bot.py to train the chatbot (it is recommended the use of GPU, to do so type: THEANO_FLAGS=mode=FAST_RUN,device=gpu,floatX=float32,exception_verbosity=high python train_bot.py);
 
 Name your training data as "data.txt". This file must contain one dialogue utterance per line. If your dataset is big, set the variable num_subsets (in line 29 of train_bot.py) to a larger number.
 
-A nice overview of the current implementations of neural conversational models for different frameworks (along with some results) can be found here: https://github.com/nicolas-ivanov/seq2seq_chatbot_links
+A nice overview of the current implementations of neural conversational models for different frameworks (along with some results) can be found [here](https://github.com/nicolas-ivanov/seq2seq_chatbot_links).
 
 Our model can be applied to other NLP tasks, such as text summarization, see for example [Alternate 2: Recursive Model A](https://machinelearningmastery.com/encoder-decoder-models-text-summarization-keras/). We encourage the application of our model in other tasks, but we kindly ask to cite our work as can be seen [here](https://zenodo.org/record/825303/export/hx#.WiwV81WnGUk). 
