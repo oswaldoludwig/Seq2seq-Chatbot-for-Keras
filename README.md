@@ -43,3 +43,5 @@ weights_file_discrim = 'my_model_weights_discriminator.h5'
 A nice overview of the current implementations of neural conversational models for different frameworks (along with some results) can be found [here](https://github.com/nicolas-ivanov/seq2seq_chatbot_links).
 
 Our model can be applied to other NLP tasks, such as text summarization, see for example [Alternate 2: Recursive Model A](https://machinelearningmastery.com/encoder-decoder-models-text-summarization-keras/). We encourage the application of our model in other tasks, in this case, we kindly ask you to cite our work as can be seen in [this document](https://zenodo.org/record/825303/export/hx#.WiwV81WnGUk), registered in July 2017. 
+
+This project was done in Linux, Python 2.x, Theano 0.9.0, and Keras 1.0.4. The use of another configuration may require some minor adaptations.
