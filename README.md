@@ -44,4 +44,4 @@ A nice overview of the current implementations of neural conversational models f
 
 Our model can be applied to other NLP tasks, such as text summarization, see for example [Alternate 2: Recursive Model A](https://machinelearningmastery.com/encoder-decoder-models-text-summarization-keras/). We encourage the application of our model in other tasks, in this case, we kindly ask you to cite our work as can be seen in [this document](https://zenodo.org/record/825303/export/hx#.WiwV81WnGUk), registered in July 2017. 
 
-This project was done in Ubuntu 14.04.3 LTS, Python 2.7.6, Theano 0.9.0, and Keras 2.0.4. The use of another configuration may require some minor adaptations.
+These codes can run in Ubuntu 14.04.3 LTS, Python 2.7.6, Theano 0.9.0, and Keras 2.0.4. The use of another configuration may require some minor adaptations.
