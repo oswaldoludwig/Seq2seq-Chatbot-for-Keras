@@ -141,9 +141,9 @@ def init_model():
     input_answer = Input(shape=(maxlen_input,), dtype='int32', name='input answer')
     input_current_token = Input(shape=(dictionary_size,), name='input_current_token')
 
-    LSTM_encoder_discriminator = LSTM(sentence_embedding_size, init= 'lecun_uniform', name = 'encoder discriminator')
-        
-    LSTM_decoder_discriminator = LSTM(sentence_embedding_size, init= 'lecun_uniform', name = 'decoder discriminator')
+    LSTM_encoder_discriminator = LSTM(sentence_embedding_size, kernel_initializer= 'lecun_uniform', name = 'encoder discriminator')
+    LSTM_decoder_discriminator = LSTM(sentence_embedding_size, kernel_initializer= 'lecun_uniform', name = 'decoder discriminator')
+    
     Shared_Embedding = Embedding(output_dim=word_embedding_size, input_dim=dictionary_size, input_length=maxlen_input, trainable=False, name = 'shared')
     word_embedding_context = Shared_Embedding(input_context)
     word_embedding_answer = Shared_Embedding(input_answer)
