@@ -9,6 +9,7 @@ from keras.models import Model
 from keras.models import Sequential
 from keras.layers import Activation, Dense
 from keras.preprocessing import sequence
+from keras.layers import concatenate
 
 import keras.backend as K
 import numpy as np
@@ -148,10 +149,10 @@ def init_model():
     word_embedding_answer = Shared_Embedding(input_answer)
     context_embedding_discriminator = LSTM_encoder_discriminator(word_embedding_context)
     answer_embedding_discriminator = LSTM_decoder_discriminator(word_embedding_answer)
-    loss = merge([context_embedding_discriminator, answer_embedding_discriminator, input_current_token], mode='concat', concat_axis=1, name = 'concatenation discriminator')
+    loss = concatenate([context_embedding_discriminator, answer_embedding_discriminator, input_current_token], axis=1, name = 'concatenation discriminator')
     loss = Dense(1, activation="sigmoid", name = 'discriminator output')(loss)
 
-    model_discrim = Model(input=[input_context, input_answer, input_current_token], output = [loss])
+    model_discrim = Model(inputs=[input_context, input_answer, input_current_token], outputs = [loss])
 
     model_discrim.compile(loss='binary_crossentropy', optimizer=ad)
 
@@ -221,8 +222,8 @@ ad = Adam(lr=learning_rate)
 
 input_context = Input(shape=(maxlen_input,), dtype='int32', name='the context text')
 input_answer = Input(shape=(maxlen_input,), dtype='int32', name='the answer text up to the current token')
-LSTM_encoder = LSTM(sentence_embedding_size, init= 'lecun_uniform', name='Encode context')
-LSTM_decoder = LSTM(sentence_embedding_size, init= 'lecun_uniform', name='Encode answer up to the current token')
+LSTM_encoder = LSTM(sentence_embedding_size, kernel_initializer= 'lecun_uniform', name='Encode context')
+LSTM_decoder = LSTM(sentence_embedding_size, kernel_initializer= 'lecun_uniform', name='Encode answer up to the current token')
 
 Shared_Embedding = Embedding(output_dim=word_embedding_size, input_dim=dictionary_size, input_length=maxlen_input, name='Shared')
 word_embedding_context = Shared_Embedding(input_context)
@@ -231,7 +232,7 @@ context_embedding = LSTM_encoder(word_embedding_context)
 word_embedding_answer = Shared_Embedding(input_answer)
 answer_embedding = LSTM_decoder(word_embedding_answer)
 
-merge_layer = merge([context_embedding, answer_embedding], mode='concat', concat_axis=1, name='concatenate the embeddings of the context and the answer up to current token')
+merge_layer = concatenate([context_embedding, answer_embedding], axis=1, name='concatenate the embeddings of the context and the answer up to current token')
 out = Dense(dictionary_size/2, activation="relu", name='relu activation')(merge_layer)
 out = Dense(dictionary_size, activation="softmax", name='likelihood of the current token using softmax activation')(out)
 
