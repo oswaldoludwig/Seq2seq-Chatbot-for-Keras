@@ -236,7 +236,7 @@ merge_layer = concatenate([context_embedding, answer_embedding], axis=1, name='c
 out = Dense(dictionary_size/2, activation="relu", name='relu activation')(merge_layer)
 out = Dense(dictionary_size, activation="softmax", name='likelihood of the current token using softmax activation')(out)
 
-model = Model(input=[input_context, input_answer], output = [out])
+model = Model(inputs=[input_context, input_answer], outputs = [out])
 
 model.compile(loss='categorical_crossentropy', optimizer=ad)
 
