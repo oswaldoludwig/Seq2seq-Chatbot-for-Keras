@@ -9,6 +9,8 @@ The algorithm iterates by including the predicted token into the incomplete answ
 
 ![alt tag](https://github.com/oswaldoludwig/Seq2seq-Chatbot-for-Keras/blob/master/model_graph.png)
 
+As can be seen in the figure above, the two LSTMs are arranged in parallel, while the canonical seq2seq has the recurrent layers of encoder and decoder arranged in series. Recurrent layers are unfolded during backpropagation through time, resulting in a large number of nested functions and, therefore, a higher risk of vanishing gradient, which is worsened by the cascade of recurrent layers of the canonical seq2seq model, even in the case of gated architectures such as the LSTMs. I believe this is one of the reasons why my model behaves better during training than the canonical seq2seq.
+
 The following pseudocode explains the algorithm.
 
 ![alt tag](https://github.com/oswaldoludwig/Seq2seq-Chatbot-for-Keras/blob/master/Algorithm.png)
